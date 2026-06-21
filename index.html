@@ -12,13 +12,32 @@
     
     <style>
         :root {
-            --royal-navy: #0B132B; /* كحلي هادئ وعميق */
+            --royal-navy: #0B132B; 
             --deep-blue: #1C2541;
-            --premium-gold: #C5A059; /* ذهبي ناعم غير فاقع */
-            --silk-white: #FCFCFD; /* خلفية بيضاء حريرية ناعمة */
+            --premium-gold: #C5A059; 
+            --silk-white: #F8F9FA; 
             --card-white: #FFFFFF;
             --text-main: #334155;
             --text-muted: #64748B;
+        }
+
+        /* أنيميشن لظهور محتويات الصفحة بنعومة عند الفتح */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* أنيميشن نبض خفيف للأيقونة الرئيسية */
+        @keyframes pulseGold {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); color: #E5C07B; }
+            100% { transform: scale(1); }
         }
 
         * {
@@ -28,43 +47,48 @@
         }
 
         body {
-            font-family: 'Cairo', sans-serif; /* تغيير الخط بالكامل إلى خط القاهرة الاحترافي الناعم */
+            font-family: 'Cairo', sans-serif;
             background-color: var(--silk-white);
             color: var(--text-main);
-            line-height: 1.7;
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* حاوية الموقع المبسطة بدون براويز ضخمة */
         .wrapper {
             max-width: 750px;
             margin: 0 auto;
             background-color: var(--card-white);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
             min-height: 100vh;
+            animation: fadeInUp 1s ease-out; /* تطبيق حركة الظهور الفخمة للموقع */
         }
 
-        /* هيدر ناعم وراقي */
         header {
-            background-color: var(--royal-navy);
+            background: linear-gradient(135deg, var(--royal-navy) 0%, var(--deep-blue) 100%);
             color: var(--silk-white);
             text-align: center;
-            padding: 60px 20px;
+            padding: 70px 20px;
             border-bottom: 3px solid var(--premium-gold);
+            position: relative;
+        }
+
+        header .fa-user-md {
+            animation: pulseGold 3s infinite ease-in-out;
         }
 
         .graduate-badge {
             font-size: 0.8rem;
             color: var(--premium-gold);
             border: 1px solid rgba(197, 160, 89, 0.4);
-            padding: 4px 16px;
+            padding: 5px 18px;
             border-radius: 20px;
             display: inline-block;
             margin-bottom: 15px;
             font-weight: 400;
             letter-spacing: 0.5px;
+            background-color: rgba(197, 160, 89, 0.05);
         }
 
-        /* تصغير اسمك الكامل بشكل ملحوظ ليكون أنيقاً ومتناسقاً */
         header h1 {
             font-size: 1.6rem; 
             font-weight: 600;
@@ -76,7 +100,7 @@
         header p {
             font-size: 0.95rem;
             font-weight: 300;
-            opacity: 0.8;
+            opacity: 0.85;
             max-width: 500px;
             margin: 0 auto;
         }
@@ -85,10 +109,9 @@
             padding: 40px 25px;
         }
 
-        /* قسم الرسالة بتنسيق هادئ ورصين */
         .speech-section {
-            padding: 20px 10px;
-            margin-bottom: 40px;
+            padding: 10px 5px;
+            margin-bottom: 30px;
         }
 
         .basmala {
@@ -105,46 +128,65 @@
             text-align: justify;
             white-space: pre-line;
             color: var(--text-main);
-            font-weight: 400;
         }
 
         .quote {
-            background-color: var(--silk-white);
+            background-color: #F1F5F9;
             color: var(--royal-navy);
             text-align: center;
-            padding: 18px;
-            border-radius: 6px;
+            padding: 20px;
+            border-radius: 8px;
             font-size: 1.15rem;
             font-weight: 600;
-            margin: 30px 0;
-            border-right: 3px solid var(--premium-gold);
+            margin: 35px 0;
+            border-right: 4px solid var(--premium-gold);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* حركة عند تمرير الماوس فوق المقولة */
+        .quote:hover {
+            transform: scale(1.01) translateX(-3px);
+            background-color: #E2E8F0;
         }
 
         .thanks-box {
-            margin-top: 25px;
-            padding: 20px;
-            background-color: var(--silk-white);
-            border-radius: 6px;
-            border: 1px solid rgba(197, 160, 89, 0.15);
+            margin-top: 35px;
+            padding: 22px;
+            background: linear-gradient(to left, rgba(197, 160, 89, 0.04), transparent);
+            border-radius: 8px;
+            border-right: 3px solid var(--premium-gold);
             font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
         }
 
-        /* بطاقة المسافة المقطوعة بتصميم عصري ناعم */
+        /* بطاقة مسافة الـ 114 كم التفاعلية الحيوية */
         .hardship-card {
-            background-color: var(--royal-navy);
+            background: linear-gradient(135deg, var(--royal-navy) 0%, #152244 100%);
             color: var(--silk-white);
-            padding: 30px 20px;
-            border-radius: 8px;
+            padding: 35px 25px;
+            border-radius: 12px;
             text-align: center;
-            margin: 40px 0;
+            margin: 45px 0;
+            box-shadow: 0 8px 25px rgba(11, 19, 43, 0.1);
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+        }
+
+        .hardship-card:hover {
+            transform: translateY(-5px); /* ترتفع البطاقة بنعومة عند مرور الماوس */
+            box-shadow: 0 15px 35px rgba(11, 19, 43, 0.2);
         }
 
         .hardship-card .counter {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             font-weight: 700;
             color: var(--premium-gold);
             display: block;
             margin-bottom: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .hardship-card:hover .counter {
+            transform: scale(1.05); /* يكبر الرقم قليلاً لإعطاء شعور بالحيوية */
         }
 
         .hardship-card p {
@@ -153,41 +195,69 @@
             opacity: 0.9;
         }
 
-        /* قسم المحطات والجدول الزمني */
         .section-title {
             text-align: center;
             color: var(--royal-navy);
-            margin: 50px 0 30px;
+            margin: 60px 0 35px;
             font-size: 1.4rem;
             font-weight: 600;
+            position: relative;
+        }
+
+        /* خط مذهب صغير تحت العنوان الرئيسي لجمالية أكثر */
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background-color: var(--premium-gold);
+            margin: 8px auto 0;
+            border-radius: 2px;
         }
 
         .timeline {
             position: relative;
             margin: 30px 0;
             padding-right: 20px;
-            border-right: 1px solid rgba(197, 160, 89, 0.4);
+            border-right: 1px solid rgba(197, 160, 89, 0.3);
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
 
+        /* النقاط على الخط الزمني أصبحت تتوهج عند التفاعل */
         .timeline-item::before {
             content: '';
             position: absolute;
-            right: -25px;
-            top: 8px;
+            right: -24.5px;
+            top: 10px;
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background-color: var(--premium-gold);
+            background-color: #CBD5E1;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
+        .timeline-item:hover::before {
+            background-color: var(--premium-gold);
+            transform: scale(1.4);
+        }
+
+        /* حركات تفاعلية داخل كروت المسيرة */
         .timeline-content {
             background: var(--card-white);
-            padding: 10px 0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+        }
+
+        .timeline-item:hover .timeline-content {
+            background-color: #FAF9F6;
+            border-right: 3px solid var(--premium-gold);
+            padding-right: 25px; /* تأثير زحزحة خفيف وناعم للمحتوى */
         }
 
         .timeline-content h3 {
@@ -200,9 +270,15 @@
         }
 
         .timeline-content h3 i {
-            color: var(--premium-gold);
+            color: var(--text-muted);
             margin-left: 10px;
             font-size: 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-content h3 i {
+            color: var(--premium-gold);
+            transform: rotate(10deg); /* تدوير الأيقونة قليلاً عند المرور عليها */
         }
 
         .timeline-content p {
@@ -212,25 +288,37 @@
         }
 
         .visual-element {
-            margin-top: 10px;
+            margin-top: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
             font-size: 0.85rem;
             color: var(--text-muted);
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .timeline-item:hover .visual-element {
+            opacity: 1;
         }
 
         .visual-element i {
             color: var(--premium-gold);
         }
 
-        /* قسم مشاعر المسؤولية المبسط */
+        /* قسم مشاعر المسؤولية مع حركة تفاعل ناعمة */
         .reflection-section {
-            background-color: var(--silk-white);
-            padding: 30px 25px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border: 1px solid rgba(0, 0, 0, 0.02);
+            background-color: #F8FAFC;
+            padding: 35px 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.01);
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .reflection-section:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+            background-color: #F1F5F9;
         }
 
         .reflection-section h2 {
@@ -248,11 +336,11 @@
 
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 35px 20px;
             background-color: var(--royal-navy);
             color: var(--silk-white);
             font-size: 0.85rem;
-            border-top: 1px solid rgba(197, 160, 89, 0.2);
+            border-top: 1px solid rgba(197, 160, 89, 0.1);
         }
 
         footer p {
@@ -299,13 +387,13 @@
                 </div>
             </section>
 
-            <!-- بطاقة المسافة اليومية الناعمة -->
+            <!-- بطاقة المسافة اليومية التفاعلية حركياً -->
             <div class="hardship-card">
                 <span class="counter">١١٤ كم</span>
                 <p>مسافة كنت أقطعها يومياً في كل يوم دوام جامعي.. رحلة اختصرت خلفها كل معاني الإصرار للوصول إلى الهدف.</p>
             </div>
 
-            <!-- ٢. قسم المسيرة -->
+            <!-- ٢. قسم المسيرة التفاعلي -->
             <section>
                 <h2 class="section-title">محطات في طريقي الأكاديمي</h2>
                 
@@ -317,8 +405,8 @@
                             <h3><i class="fa-solid fa-university"></i> أول دوام لي في الجامعة</h3>
                             <p>خطواتي الأولى داخل الحرم الجامعي، حيث بدأت الرحلة الكبيرة وحيث كانت الأحلام مجرد أفكار في السطور الأولى.</p>
                             <div class="visual-element">
-                                <i class="fa-solid fa-angle-left"></i>
-                                <span>بداية الرحلة</span>
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                                <span>بداية الرحلة الأكاديمية</span>
                             </div>
                         </div>
                     </div>
@@ -329,7 +417,7 @@
                             <h3><i class="fa-solid fa-user-md"></i> المرة الأولى التي ارتديت فيها المريول الطبي</h3>
                             <p>لحظة فخر لا تُنسى، عندما تحول الحلم إلى حقيقة ملموسة، وشعرت لأول مرة بهيبة ومسؤولية الرداء الأبيض.</p>
                             <div class="visual-element">
-                                <i class="fa-solid fa-angle-left"></i>
+                                <i class="fa-solid fa-arrow-left-long"></i>
                                 <span>الخطوة العملية الأولى</span>
                             </div>
                         </div>
@@ -341,7 +429,7 @@
                             <h3><i class="fa-solid fa-stethoscope"></i> أول خطوة في العيادة الجامعية</h3>
                             <p>هنا بدأ الاحتكاك الحقيقي.. رهبة المكان، وأصوات الأجهزة، والتحضير النفسي للانتقال من الكتب إلى الواقع العملي.</p>
                             <div class="visual-element">
-                                <i class="fa-solid fa-angle-left"></i>
+                                <i class="fa-solid fa-arrow-left-long"></i>
                                 <span>العيادات السريرية</span>
                             </div>
                         </div>
@@ -353,7 +441,7 @@
                             <h3><i class="fa-solid fa-tooth"></i> إنجاز أول حالة علاجية</h3>
                             <p>كنت متوتراً جداً وخائفاً من الفشل في البداية. ولكن بعد إنجازها بنجاح، أدركت تماماً أن الفشل أو الخوف منه ليس إلا مفتاحاً للنجاح، وأنه لا يمكن للإنسان أن يتطور ويتعلم دون خوض هذه التجارب.</p>
                             <div class="visual-element">
-                                <i class="fa-solid fa-angle-left"></i>
+                                <i class="fa-solid fa-arrow-left-long"></i>
                                 <span>بناء الثقة والانطلاق</span>
                             </div>
                         </div>
