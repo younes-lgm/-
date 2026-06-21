@@ -1,322 +1,108 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رحلة التخرج والوصول</title>
-    <!-- استيراد خطوط عربية أنيقة -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Tajawal:wght@300;500;700&display=swap" rel="family">
-    
-    <style>
-        :root {
-            --navy: #0B1B3D;
-            --gold: #C5A059;
-            --white: #FFFFFF;
-            --light-gray: #F8F9FA;
-            --text-dark: #222222;
-        }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: var(--white);
-            color: var(--text-dark);
-            line-height: 1.8;
-        }
 
-        /* الهيدر وبداية الصفحة */
-        header {
-            background: linear-gradient(135deg, var(--navy) 0%, #152B5B 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 60px 20px;
-            border-bottom: 5px solid var(--gold);
-            position: relative;
-        }
 
-        header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            color: var(--gold);
-        }
+مرحباً بكم في رحلتي الدراسية
 
-        header p {
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+حصاد سنوات من الجهد، الشغف، والوصول
 
-        /* قسم الرسالة */
-        .speech-section {
-            background-color: var(--light-gray);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-right: 5px solid var(--gold);
-            margin-bottom: 50px;
-        }
 
-        .basmala {
-            font-family: 'Amiri', serif;
-            font-size: 1.6rem;
-            text-align: center;
-            color: var(--navy);
-            margin-bottom: 20px;
-        }
 
-        .speech-text {
-            font-size: 1.1rem;
-            text-align: justify;
-            white-space: pre-line;
-        }
 
-        .quote {
-            background-color: var(--navy);
-            color: var(--white);
-            text-align: center;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 25px 0;
-            border-bottom: 3px solid var(--gold);
-        }
 
-        /* قسم المسيرة والجدول الزمني */
-        .section-title {
-            text-align: center;
-            color: var(--navy);
-            margin-bottom: 40px;
-            font-size: 1.8rem;
-            position: relative;
-        }
+بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيم
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--gold);
-            margin: 10px auto 0;
-        }
 
-        .timeline {
-            position: relative;
-            margin: 40px 0;
-            padding-right: 20px;
-            border-right: 3px solid var(--navy);
-        }
+الحمدُ للهِ الذي علَّم بالقلم، علَّم الإنسان ما لم يعلم، وجعل بعد العسر يسرًا، والصلاة والسلام على سيدنا محمد ﷺ.
+أما بعد…
+اليوم أقف وفي ذهني مقولة فهمت معناها عند الوصول وهي:
+"من لا يعاني… لا يدرك المعاني"
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-        }
+لم نفهم قيمة النجاح إلا بعد التعب، ولا معنى الصبر إلا بعد الشدائد، ولا طعم الوصول إلا بعد طول الطريق. وتعلمنا أن الفشل ليس نهاية الحلم، بل بداية تصحيح المسار، وبداية أقرب للنجاح.
+اليوم لا نقف لنعلن نهاية طريق، بل نقف لنشهد بداية طريق جديد نكتب فيه ما نتمنّى أن نكونه ونحققه بإذن الله.
+وفي الختام…
+نشكرُ أهلَنا الذين كانوا السندَ بعد الله، ومعلّمينا الذين أضاءوا لنا الطريق، وكلَّ شخصٍ كان كلمةَ دعمٍ في لحظةِ تعب. ونسألُ اللهَ أن يجعلَ نجاحَنا بدايةَ خير، وأن يرزقنا الإخلاصَ في العلمِ والعمل، وأن يكتبَ لنا أثرًا طيبًا في حياةِ الناس.
+وأتمنى لرفاق دربي دوام التوفيق، وأن يكتب الله لكل واحدٍ منهم مستقبلًا يليق بتعبه، وجهده، وأحلامه.
+والسلام عليكم ورحمة الله وبركاته 🤍
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            right: -27px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--gold);
-            border: 3px solid var(--navy);
-        }
 
-        .timeline-date {
-            font-weight: bold;
-            color: var(--gold);
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
 
-        .timeline-content {
-            background: var(--light-gray);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
 
-        .timeline-content h3 {
-            color: var(--navy);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
 
-        /* مكان مخصص للصور المرافقة للأحداث */
-        .timeline-img-placeholder {
-            width: 100%;
-            height: 200px;
-            background-color: #E2E8F0;
-            margin-top: 15px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #718096;
-            font-size: 0.9rem;
-            border: 1px dashed var(--gold);
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-        }
+١١٤ كم
+كنت أقطعها يومياً في كل يوم دوام جامعي.. مسافة اختصرت خلفها كل معاني الإصرار والتحدي للوصول إلى الهدف.
 
-        /* بطاقة المعاناة الخاصة بالمسافة */
-        .hardship-card {
-            background: linear-gradient(135deg, #1e293b 0%, var(--navy) 100%);
-            color: var(--white);
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 40px 0;
-            border: 1px solid var(--gold);
-        }
 
-        .hardship-card .counter {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--gold);
-            display: block;
-            line-height: 1;
-        }
 
-        /* قسم المشاعر والمسؤولية */
-        .reflection-section {
-            background-color: #FFFDF9;
-            border: 1px solid #EEDFCE;
-            padding: 30px;
-            border-radius: 15px;
-            margin-top: 5px;
-        }
 
-        .reflection-section p {
-            font-style: italic;
-            color: #4A5568;
-        }
+محطات في طريقي
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background-color: var(--navy);
-            color: var(--white);
-            font-size: 0.9rem;
-            margin-top: 60px;
-            border-top: 4px solid var(--gold);
-        }
-    </style>
-</head>
-<body>
 
-    <header>
-        <h1>مرحباً بكم في رحلتي الدراسية</h1>
-        <p>حصاد سنوات من الجهد، الشغف، والوصول</p>
-    </header>
 
-    <div class="container">
 
-        <!-- ١. قسم رسالة التخرج -->
-        <section class="speech-section">
-            <div class="basmala">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيم</div>
-            <div class="speech-text">
-                الحمدُ للهِ الذي علَّم بالقلم، علَّم الإنسان ما لم يعلم، وجعل بعد العسر يسرًا، والصلاة والسلام على سيدنا محمد ﷺ.
-                أما بعد…
-                اليوم أقف وفي ذهني مقولة فهمت معناها عند الوصول وهي:
-                <div class="quote">"من لا يعاني… لا يدرك المعاني"</div>
-                لم نفهم قيمة النجاح إلا بعد التعب، ولا معنى الصبر إلا بعد الشدائد، ولا طعم الوصول إلا بعد طول الطريق. وتعلمنا أن الفشل ليس نهاية الحلم، بل بداية تصحيح المسار، وبداية أقرب للنجاح.
 
-                اليوم لا نقف لنعلن نهاية طريق، بل نقف لنشهد بداية طريق جديد نكتب فيه ما نتمنّى أن نكونه ونحققه بإذن الله.
+أول دوام لي في الجامعة
 
-                وفي الختام…
-                نشكرُ أهلَنا الذين كانوا السندَ بعد الله، ومعلّمينا الذين أضاءوا لنا الطريق، وكلَّ شخصٍ كان كلمةَ دعمٍ في لحظةِ تعب. ونسألُ اللهَ أن يجعلَ نجاحَنا بدايةَ خير، وأن يرزقنا الإخلاصَ في العلمِ والعمل، وأن يكتبَ لنا أثرًا طيبًا في حياةِ الناس.
+خطواتي الأولى داخل الحرم الجامعي، حيث بدأت الرحلة الكبيرة وحيث كانت الأحلام مجرد أفكار في السطور الأولى.
 
-                وأتمنى لرفاق دربي دوام التوفيق، وأن يكتب الله لكل واحدٍ منهم مستقبلًا يليق بتعبه، وجهده، وأحلامه.
 
-                والسلام عليكم ورحمة الله وبركاته 🤍
-            </div>
-        </section>
+[ https://ibb.co/Q38yCPT2 ]
 
-        <!-- كرت يسلط الضوء على رحلة السفر اليومية -->
-        <div class="hardship-card">
-            <span class="counter">١١٤ كم</span>
-            <p style="margin-top: 10px; font-size: 1.1rem;">كنت أقطعها يومياً في كل يوم دوام جامعي.. مسافة اختصرت خلفها كل معاني الإصرار والتحدي للوصول إلى الهدف.</p>
-        </div>
 
-        <!-- ٢. قسم المسيرة (الجدول الزمني) -->
-        <section>
-            <h2 class="section-title">محطات في طريقي</h2>
-            <div class="timeline">
-                
-                <!-- المحطة 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>أول دوام لي في الجامعة</h3>
-                        <p>خطواتي الأولى داخل الحرم الجامعي، حيث بدأت الرحلة الكبيرة وحيث كانت الأحلام مجرد أفكار في السطور الأولى.</p>
-                        <!-- لاستبدال الصورة: ضع رابط صورتك داخل الـ src في وسم img لاحقاً، حالياً هذا مساحته -->
-                        <div class="timeline-img-placeholder">[ أضف صورتك في أول يوم جامعي هنا ]</div>
-                    </div>
-                </div>
 
-                <!-- المحطة 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>المرة الأولى التي ارتديت فيها المريول الطبي</h3>
-                        <p>لحظة فخر لا تُنسى، عندما تحول الحلم إلى حقيقة ملموسة، وشعرت لأول مرة بهيبة ومسؤولية الرداء الأبيض.</p>
-                        <div class="timeline-img-placeholder">[ أضف صورتك بالمريول الأبيض هنا ]</div>
-                    </div>
-                </div>
 
-                <!-- المحطة 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>أول خطوة في العيادة الجامعية</h3>
-                        <p>هنا بدأ الاحتكاك الحقيقي.. رهبة المكان، وأصوات الأجهزة، والتحضير النفسي للانتقال من الكتب إلى الواقع العملي.</p>
-                        <div class="timeline-img-placeholder">[ أضف صورتك داخل العيادة هنا ]</div>
-                    </div>
-                </div>
 
-                <!-- المحطة 4 -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <h3>إنجاز أول حالة علاجية</h3>
-                        <p>كنت متوتراً جداً وخائفاً من الفشل في البداية. ولكن بعد إنجازها بنجاح، أدركت تماماً أن الفشل أو الخوف منه ليس إلا مفتاحاً للنجاح، وأنه لا يمكن للإنسان أن يتطور ويتعلم دون خوض هذه التجارب البركانية.</p>
-                        <div class="timeline-img-placeholder">[ أضف صورتك مع أول حالة أو إنجاز عيادي هنا ]</div>
-                    </div>
-                </div>
 
-            </div>
-        </section>
+المرة الأولى التي ارتديت فيها المريول الطبي
 
-        <!-- ٣. قسم شعور ما بعد التخرج والمسؤولية -->
-        <section class="reflection-section">
-            <h2 class="section-title">ما بعد الوصول.. ومشاعر المسؤولية</h2>
-            <p style="text-align: justify; font-size: 1.1rem; line-height: 1.9; color: var(--navy);">
-                مع فرحة التخرج والوصول إلى هذا اليوم المنتظر، تولد شعور خفي ومختلف.. شعور بالمسؤولية الكبيرة والعميقة. 
-                <br><br>
-                بدأت أسأل نفسي مراراً: <strong>هل أنا قادر على التعامل مع نفس بشرية وأمانة صحية؟</strong> يرافقني أحياناً تأنيب الضمير الملازم لكل طبيب مخلص: هل درست وتعلمت بالشكل الكافي لأكون كفؤاً وبالمستوى المطلوب لهذا المكان؟ 
-                <br><br>
-                هذه التساؤلات ليست ضعفاً، بل هي المحرك الأساسي لي لأستمر في التعلم والبحث، وأن أرعى هذه الأمانة بكل ما أوتيت من علم وإخلاص.
-            </p>
-        </section>
+لحظة فخر لا تُنسى، عندما تحول الحلم إلى حقيقة ملموسة، وشعرت لأول مرة بهيبة ومسؤولية الرداء الأبيض.
 
-    </div>
+[ https://ibb.co/B2K3T0x3 ]
 
-    <footer>
-        <p>شكرًا لكونكم جزءًا من رحلتي ويومي المميز ✨</p>
-    </footer>
 
-</body>
-</html>
+
+
+
+
+أول خطوة في العيادة الجامعية
+
+هنا بدأ الاحتكاك الحقيقي.. رهبة المكان، وأصوات الأجهزة، والتحضير النفسي للانتقال من الكتب إلى الواقع العملي.
+
+[ https://ibb.co/4whtPQ43 ]
+
+
+
+
+
+
+إنجاز أول حالة علاجية
+
+كنت متوتراً جداً وخائفاً من الفشل في البداية. ولكن بعد إنجازها بنجاح، أدركت تماماً أن الفشل أو الخوف منه ليس إلا مفتاحاً للنجاح، وأنه لا يمكن للإنسان أن يتطور ويتعلم دون خوض هذه التجارب البركانية.
+
+[ https://ibb.co/VWHpB98x ]
+
+
+
+
+
+
+ما بعد الوصول.. ومشاعر المسؤولية
+
+
+مع فرحة التخرج والوصول إلى هذا اليوم المنتظر، تولد شعور خفي ومختلف.. شعور بالمسؤولية الكبيرة والعميقة.
+
+
+
+بدأت أسأل نفسي مراراً: هل أنا قادر على التعامل مع نفس بشرية وأمانة صحية؟ يرافقني أحياناً تأنيب الضمير الملازم لكل طبيب مخلص: هل درست وتعلمت بالشكل الكافي لأكون كفؤاً وبالمستوى المطلوب لهذا المكان؟
+
+
+
+هذه التساؤلات ليست ضعفاً، بل هي المحرك الأساسي لي لأستمر في التعلم والبحث، وأن أرعى هذه الأمانة بكل ما أوتيت من علم وإخلاص.
+
+
+
+
+شكرًا لكونكم جزءًا من رحلتي ويومي المميز ✨
+
+
