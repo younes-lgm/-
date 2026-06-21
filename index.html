@@ -4,38 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مسيرة التخرج | د. يونس محمد ياسين صوفان</title>
-    <!-- استيراد خط القاهرة الحديث الناعم وأيقونات FontAwesome -->
+    <!-- استيراد خطوط مميزة: خط الريم الكوفي الفخم للاسم، وخط القاهرة لباقي الموقع -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --royal-navy: #0B132B; 
-            --deep-blue: #1C2541;
-            --premium-gold: #C5A059; 
+            --royal-navy: #0A0F1D; 
+            --deep-blue: #131A32;
+            --premium-gold: #D4AF37; 
             --silk-white: #F8F9FA; 
             --card-white: #FFFFFF;
             --text-main: #334155;
             --text-muted: #64748B;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* أنيميشن حركة تداخل الألوان في الخلفية الهيدر */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        @keyframes pulseGold {
-            0% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.05); color: #E5C07B; opacity: 1; }
-            100% { transform: scale(1); opacity: 0.9; }
+        /* أنيميشن لمعان مذهب متحرك على الاسم */
+        @keyframes goldShine {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         * {
@@ -56,74 +57,81 @@
             max-width: 750px;
             margin: 0 auto;
             background-color: var(--card-white);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.05);
             min-height: 100vh;
-            animation: fadeInUp 1s ease-out;
         }
 
+        /* مقدمة سينمائية متغيرة الألوان بحركة موجية ناعمة */
         header {
-            background: linear-gradient(135deg, var(--royal-navy) 0%, var(--deep-blue) 100%);
+            background: linear-gradient(-45deg, #0A0F1D, #1A2342, #0F172A, #1E293B);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
             color: var(--silk-white);
             text-align: center;
-            padding: 65px 20px;
+            padding: 90px 20px;
             border-bottom: 3px solid var(--premium-gold);
             position: relative;
+            overflow: hidden;
         }
 
-        /* حاوية الأقواس والرسومات حول الاسم */
-        .name-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin: 15px 0;
-        }
-
-        .wreath-icon {
-            font-size: 1.8rem;
-            color: var(--premium-gold);
-            opacity: 0.85;
-            transition: transform 0.5s ease;
-        }
-
-        /* حركة خفيفة للأقواس والرسومات عند فتح الصفحة */
-        .wreath-left { animation: fadeInUp 1.2s ease-out; }
-        .wreath-right { animation: fadeInUp 1.2s ease-out; }
-
-        .name-container:hover .wreath-left { transform: translateX(-5px) rotate(-5deg); }
-        .name-container:hover .wreath-right { transform: translateX(5px) rotate(5deg); }
-
+        /* شارة الطبيب التفاعلية */
         .graduate-badge {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--premium-gold);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            padding: 5px 18px;
-            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 6px 20px;
+            border-radius: 25px;
             display: inline-block;
             font-weight: 400;
-            letter-spacing: 0.5px;
-            background-color: rgba(197, 160, 89, 0.05);
+            background: rgba(212, 175, 55, 0.05);
+            backdrop-filter: blur(5px);
+            margin-bottom: 25px;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .graduate-badge i {
-            margin-left: 6px;
-            animation: pulseGold 2.5s infinite ease-in-out;
+            margin-left: 8px;
         }
 
+        /* حاوية زجاجية فخمة جداً تحتضن الاسم */
+        .hero-name-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .hero-name-card:hover {
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.1);
+        }
+
+        /* تعديل الخط للاسم إلى كوفي هندسي مذهب ومتحرك اللمعان */
         header h1 {
-            font-size: 1.6rem; 
-            font-weight: 600;
-            color: var(--premium-gold);
-            letter-spacing: 0.5px;
-            margin: 0;
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 2.1rem; 
+            font-weight: 700;
+            background: linear-gradient(to right, #FFF 20%, var(--premium-gold) 40%, var(--premium-gold) 60%, #FFF 80%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldShine 4s linear infinite;
+            line-height: 1.5;
         }
 
         header p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 300;
-            opacity: 0.85;
-            max-width: 500px;
+            opacity: 0.8;
+            max-width: 480px;
             margin: 15px auto 0 auto;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .container {
@@ -139,7 +147,7 @@
             font-family: 'Amiri', serif;
             font-size: 1.6rem;
             text-align: center;
-            color: var(--royal-navy);
+            color: #1A2342;
             margin-bottom: 25px;
             font-weight: 400;
         }
@@ -153,7 +161,7 @@
 
         .quote {
             background-color: #F1F5F9;
-            color: var(--royal-navy);
+            color: #1A2342;
             text-align: center;
             padding: 20px;
             border-radius: 8px;
@@ -172,7 +180,7 @@
         .thanks-box {
             margin-top: 35px;
             padding: 22px;
-            background: linear-gradient(to left, rgba(197, 160, 89, 0.04), transparent);
+            background: linear-gradient(to left, rgba(212, 175, 55, 0.04), transparent);
             border-radius: 8px;
             border-right: 3px solid var(--premium-gold);
             font-size: 1rem;
@@ -180,7 +188,7 @@
         }
 
         .hardship-card {
-            background: linear-gradient(135deg, var(--royal-navy) 0%, #152244 100%);
+            background: linear-gradient(135deg, #0A0F1D 0%, #152244 100%);
             color: var(--silk-white);
             padding: 35px 25px;
             border-radius: 12px;
@@ -216,7 +224,7 @@
 
         .section-title {
             text-align: center;
-            color: var(--royal-navy);
+            color: #1A2342;
             margin: 60px 0 35px;
             font-size: 1.4rem;
             font-weight: 600;
@@ -237,7 +245,7 @@
             position: relative;
             margin: 30px 0;
             padding-right: 20px;
-            border-right: 1px solid rgba(197, 160, 89, 0.3);
+            border-right: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .timeline-item {
@@ -277,7 +285,7 @@
         }
 
         .timeline-content h3 {
-            color: var(--royal-navy);
+            color: #1A2342;
             margin-bottom: 8px;
             font-size: 1.1rem;
             font-weight: 600;
@@ -338,7 +346,7 @@
 
         .reflection-section h2 {
             font-size: 1.3rem;
-            color: var(--royal-navy);
+            color: #1A2342;
             margin-bottom: 15px;
             font-weight: 600;
         }
@@ -352,10 +360,10 @@
         footer {
             text-align: center;
             padding: 35px 20px;
-            background-color: var(--royal-navy);
+            background-color: #0A0F1D;
             color: var(--silk-white);
             font-size: 0.85rem;
-            border-top: 1px solid rgba(197, 160, 89, 0.1);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         footer p {
@@ -367,16 +375,13 @@
 
     <div class="wrapper">
 
+        <!-- الهيدر المطور كلياً بحركات تموج ولمعان تفاعلي -->
         <header>
-            <div class="graduate-badge"><i class="fa-solid fa-user-md"></i> طب وجراحة الفم والأسنان</div>
-            
-            <!-- قسم الاسم الجديد المزين بالرسومات التفاعلية الناعمة -->
-            <div class="name-container">
-                <i class="fa-solid fa-feather wreath-icon wreath-right" style="transform: scaleX(-1);"></i>
+            <div class="graduate-badge"><i class="fa-solid fa-user-md"></i> جراحة وطب الأسنان</div>
+            <br>
+            <div class="hero-name-card">
                 <h1>د. يونس محمد ياسين صوفان</h1>
-                <i class="fa-solid fa-feather wreath-icon wreath-left"></i>
             </div>
-            
             <p>حصاد سنوات من الجهد والشغف والوصول.. مرحباً بكم في رحلتي الدراسية</p>
         </header>
 
@@ -405,7 +410,7 @@
                     <br>
                     أتمنى لرفاق دربي دوام التوفيق، وأن يكتب الله لكل واحدٍ منهم مستقبلًا يليق بتعبه، جهده، وأحلامه.
 
-                    <p style="text-align: center; margin-top: 20px; font-weight: 600; color: var(--royal-navy);">والسلام عليكم ورحمة الله وبركاته 🤍</p>
+                    <p style="text-align: center; margin-top: 20px; font-weight: 600; color: #1A2342;">والسلام عليكم ورحمة الله وبركاته 🤍</p>
                 </div>
             </section>
 
@@ -449,7 +454,7 @@
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3><i class="fa-solid fa-stethoscope"></i> أول خطوة في العيادة الجامعية</h3>
-                            <p>هنا بدأ الاحتكاك الحقيقي.. رهبة المكان, وأصوات الأجهزة، والتحضير النفسي للانتقال من الكتب إلى الواقع العملي.</p>
+                            <p>هنا بدأ الاحتكاك الحقيقي.. رهبة المكان، وأصوات الأجهزة، والتحضير النفسي للانتقال من الكتب إلى الواقع العملي.</p>
                             <div class="visual-element">
                                 <i class="fa-solid fa-arrow-left-long"></i>
                                 <span>العيادات السريرية</span>
