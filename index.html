@@ -3,65 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>يونس صوفان | موقع التخرج</title>
+    <title>معرض أعمال التخرج</title>
     <style>
-        /* التنسيق البسيط والناجح بألوان جديدة */
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c5a880; /* لون الكحلي الفاخر  يناسب أجواء التخرج */
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9; /* خلفية رمادية فاتحة ومريحة */
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 100vh;
         }
-        .card {
-            background: white;
-            padding: 35px 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+        /* الهيدر أو غلاف الصفحة */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: white;
+            width: 100%;
             text-align: center;
-            max-width: 400px;
-            width: 90%;
-            border-top: 5px solid #c5a880; /* خط ذهبي أنيق في أعلى البطاقة */
+            padding: 40px 20px;
+            box-sizing: border-box;
+            border-bottom: 5px solid var(--accent-color);
         }
-        h1 {
-            color: #1a252f; /* لون كحلي فاخر للاسم */
-            margin-bottom: 15px;
-            font-size: 26px;
-            font-weight: 700;
+
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
         }
-        p {
-            color: #555;
+
+        .header p {
+            margin: 10px 0 0 0;
             font-size: 16px;
-            line-height: 1.7;
-            margin-bottom: 25px;
+            color: #e0e0e0;
         }
-        .btn {
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 30px auto;
+        }
+
+        /* بطاقة الترحيب */
+        .welcome-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .welcome-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* قسم معرض الأعمال */
+        .section-title {
+            color: var(--primary-color);
+            border-right: 4px solid var(--accent-color);
+            padding-right: 10px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portfolio-info {
+            padding: 15px;
+        }
+
+        .portfolio-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: var(--primary-color);
+        }
+
+        .portfolio-info p {
+            margin: 0 0 15px 0;
+            font-size: 14px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .view-btn {
             display: inline-block;
-            padding: 12px 28px;
-            background-color: #1a252f; /* زر باللون الكحلي */
+            padding: 8px 16px;
+            background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background 0.3s, transform 0.2s;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: background 0.3s;
         }
-        .btn:hover {
-            background-color: #c5a880; /* يتحول للذهبي عند تمرير الماوس أو الضغط */
-            color: #1a252f;
+
+        .view-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* الفوتر */
+        .footer {
+            margin-top: 5px;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>يونس صوفان</h1>
-        <p>أهلاً بكم في موقعي الرقمي. يسعدني مشاركتكم لي فرحة تخرجي، وهنا أضع بين أيديكم نافذة صغيرة لاستعراض جانب من أعمالي ومسيرتي خلال سنوات الدراسة.</p>
-        <a href="#" class="btn">تصفح أعمالي</a>
+    <!-- الهيدر -->
+    <div class="header">
+        <h1>مرحباً بكم في موقعي الرقمي</h1>
+        <p>جزء من مسيرتي وأعمالي خلال السنوات الدراسية</p>
+    </div>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container">
+        
+        <!-- بطاقة الترحيب -->
+        <div class="welcome-card">
+            <p>أهلاً بكم جميعاً، يسعدني جداً مشاركتكم لي فرحة تخرجي. هذا الموقع صممته ليكون نافذة صغيرة أشارككم من خلالها بعضاً من التقارير الطبية، الحالات الدراسية، والتصاميم التي قمت بالعمل عليها وشغفت بها طوال رحلتي الجامعية.</p>
+        </div>
+
+        <!-- معرض الأعمال -->
+        <h2 class="section-title">أبرز أعمالي ومشاريعي</h2>
+        
+        <div class="portfolio-grid">
+            
+            <!-- العمل الأول (مثال: تقارير طبية) -->
+            <div class="portfolio-item">
+                <div class="portfolio-info">
+                    <h3>التقارير الطبية والأبحاث</h3>
+                    <p>مجموعة من التقارير السريرية ودراسة الحالات في طب وأمراض الفم التي قمت بإعدادها.</p>
+                    <a href="#" class="view-btn">تصفح التقارير</a>
+                </div>
+            </div>
+
+            <!-- العمل الثاني (مثال: التصاميم واللوحات) -->
+            <div class="portfolio-item">
+                <div class="portfolio-info">
+                    <h3>التصاميم والهوية البصرية</h3>
+                    <p>جانب من شغفي في التصميم الجرافيكي وبناء الهويات البصرية واللوحات الرقمية.</p>
+                    <a href="#" class="view-btn">استعراض التصاميم</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        شكرًا لزيارتكم ومشاركتي هذه اللحظة المتميزة.
     </div>
 
 </body>
