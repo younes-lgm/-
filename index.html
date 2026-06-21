@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مسيرة التخرج | د. يونس محمد ياسين صوفان</title>
-    <!-- استيراد خطوط عربية أميرية وتاجبول الفاخرة وأيقونات FontAwesome -->
+    <!-- استيراد خط القاهرة الحديث الناعم وأيقونات FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --royal-navy: #0A1128; /* كحلي حبري داكن جداً وفخم */
+            --royal-navy: #0B132B; /* كحلي هادئ وعميق */
             --deep-blue: #1C2541;
-            --premium-gold: #D4AF37; /* ذهبي مطفي راقي */
-            --gold-glow: rgba(212, 175, 55, 0.15);
-            --silk-white: #FCFCFD; /* أبيض حريري مريح */
-            --text-main: #1E293B;
+            --premium-gold: #C5A059; /* ذهبي ناعم غير فاقع */
+            --silk-white: #FCFCFD; /* خلفية بيضاء حريرية ناعمة */
+            --card-white: #FFFFFF;
+            --text-main: #334155;
+            --text-muted: #64748B;
         }
 
         * {
@@ -27,70 +28,56 @@
         }
 
         body {
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Cairo', sans-serif; /* تغيير الخط بالكامل إلى خط القاهرة الاحترافي الناعم */
             background-color: var(--silk-white);
             color: var(--text-main);
-            line-height: 1.9;
-            padding: 15px;
+            line-height: 1.7;
         }
 
-        /* برواز ملكي يحيط بصفحة الموقع بأكملها لجعلها تبدو كوثيقة رسمية فاخرة */
-        .page-border {
-            border: 2px solid var(--premium-gold);
-            outline: 8px solid var(--royal-navy);
-            background-color: var(--silk-white);
-            min-height: 100vh;
-            max-width: 850px;
+        /* حاوية الموقع المبسطة بدون براويز ضخمة */
+        .wrapper {
+            max-width: 750px;
             margin: 0 auto;
-            box-shadow: 0 20px 50px rgba(10, 17, 40, 0.15);
-            border-radius: 4px;
+            background-color: var(--card-white);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            min-height: 100vh;
         }
 
-        /* الهيدر الأنيق والمبسط */
+        /* هيدر ناعم وراقي */
         header {
-            background: radial-gradient(circle at top, var(--deep-blue) 0%, var(--royal-navy) 100%);
+            background-color: var(--royal-navy);
             color: var(--silk-white);
             text-align: center;
-            padding: 80px 25px;
-            border-bottom: 4px solid var(--premium-gold);
-            position: relative;
-        }
-
-        .header-decor {
-            font-size: 2.5rem;
-            color: var(--premium-gold);
-            margin-bottom: 15px;
-            opacity: 0.9;
+            padding: 60px 20px;
+            border-bottom: 3px solid var(--premium-gold);
         }
 
         .graduate-badge {
-            border: 1px solid var(--premium-gold);
-            background-color: rgba(212, 175, 55, 0.08);
+            font-size: 0.8rem;
             color: var(--premium-gold);
+            border: 1px solid rgba(197, 160, 89, 0.4);
+            padding: 4px 16px;
+            border-radius: 20px;
             display: inline-block;
-            padding: 6px 24px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
+        /* تصغير اسمك الكامل بشكل ملحوظ ليكون أنيقاً ومتناسقاً */
         header h1 {
-            font-family: 'Tajawal', sans-serif;
-            font-size: 2.3rem;
-            margin-bottom: 15px;
+            font-size: 1.6rem; 
+            font-weight: 600;
             color: var(--premium-gold);
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
 
         header p {
-            font-size: 1.15rem;
+            font-size: 0.95rem;
             font-weight: 300;
-            opacity: 0.85;
-            max-width: 550px;
+            opacity: 0.8;
+            max-width: 500px;
             margin: 0 auto;
         }
 
@@ -98,227 +85,200 @@
             padding: 40px 25px;
         }
 
-        /* قسم الرسالة بتصميم كلاسيكي هادئ ورائع */
+        /* قسم الرسالة بتنسيق هادئ ورصين */
         .speech-section {
-            background-color: #FFFFFF;
-            border-radius: 12px;
-            padding: 40px 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            margin-bottom: 50px;
-            position: relative;
+            padding: 20px 10px;
+            margin-bottom: 40px;
         }
 
         .basmala {
             font-family: 'Amiri', serif;
-            font-size: 1.9rem;
+            font-size: 1.6rem;
             text-align: center;
             color: var(--royal-navy);
-            margin-bottom: 30px;
-            font-weight: 700;
+            margin-bottom: 25px;
+            font-weight: 400;
         }
 
         .speech-text {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             text-align: justify;
             white-space: pre-line;
-            color: #334155;
+            color: var(--text-main);
+            font-weight: 400;
         }
 
         .quote {
-            font-family: 'Amiri', serif;
-            background-color: rgba(10, 17, 40, 0.02);
+            background-color: var(--silk-white);
             color: var(--royal-navy);
             text-align: center;
-            padding: 25px;
-            border-radius: 4px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            font-style: italic;
-            margin: 35px 0;
-            border-right: 4px solid var(--premium-gold);
-            border-left: 4px solid var(--premium-gold);
+            padding: 18px;
+            border-radius: 6px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 30px 0;
+            border-right: 3px solid var(--premium-gold);
         }
 
-        /* لوحة الشكر الخاصة بالأهل والمعلمين */
         .thanks-box {
-            margin-top: 30px;
+            margin-top: 25px;
             padding: 20px;
-            background-color: rgba(212, 175, 55, 0.04);
-            border-radius: 8px;
-            border: 1px dashed var(--premium-gold);
+            background-color: var(--silk-white);
+            border-radius: 6px;
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            font-size: 1rem;
         }
 
-        /* بطاقة فخر المسافة المقطوعة */
+        /* بطاقة المسافة المقطوعة بتصميم عصري ناعم */
         .hardship-card {
-            background: var(--royal-navy);
+            background-color: var(--royal-navy);
             color: var(--silk-white);
-            padding: 35px 30px;
-            border-radius: 12px;
+            padding: 30px 20px;
+            border-radius: 8px;
             text-align: center;
-            margin: 50px 0;
-            border-top: 3px solid var(--premium-gold);
-            border-bottom: 3px solid var(--premium-gold);
-            box-shadow: 0 10px 30px rgba(10, 17, 40, 0.1);
+            margin: 40px 0;
         }
 
         .hardship-card .counter {
-            font-size: 3.2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--premium-gold);
             display: block;
             margin-bottom: 5px;
         }
 
-        /* قسم المسيرة والجدول الزمني الراقي */
+        .hardship-card p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* قسم المحطات والجدول الزمني */
         .section-title {
             text-align: center;
             color: var(--royal-navy);
-            margin: 60px 0 40px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            margin: 50px 0 30px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
         .timeline {
             position: relative;
             margin: 30px 0;
-            padding-right: 25px;
-            border-right: 2px solid var(--premium-gold);
+            padding-right: 20px;
+            border-right: 1px solid rgba(197, 160, 89, 0.4);
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            right: -33px;
-            top: 6px;
-            width: 12px;
-            height: 12px;
+            right: -25px;
+            top: 8px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background-color: var(--premium-gold);
-            box-shadow: 0 0 0 4px var(--silk-white);
         }
 
         .timeline-content {
-            background: #FFFFFF;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
-            border: 1px solid rgba(0,0,0,0.04);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            border-color: var(--premium-gold);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.08);
+            background: var(--card-white);
+            padding: 10px 0;
         }
 
         .timeline-content h3 {
             color: var(--royal-navy);
-            margin-bottom: 12px;
-            font-size: 1.25rem;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            font-weight: 700;
         }
 
         .timeline-content h3 i {
             color: var(--premium-gold);
-            margin-left: 12px;
-            font-size: 1.1rem;
+            margin-left: 10px;
+            font-size: 1rem;
         }
 
         .timeline-content p {
-            color: #475569;
-            font-size: 1.05rem;
+            color: var(--text-main);
+            font-size: 0.95rem;
             text-align: justify;
         }
 
-        /* الأيقونات الراقية المدمجة بدلاً من الصور الفراغية */
         .visual-element {
-            margin-top: 15px;
-            padding: 15px;
-            background-color: rgba(10, 17, 40, 0.01);
-            border-radius: 6px;
+            margin-top: 10px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            border-right: 3px solid rgba(212, 175, 55, 0.4);
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         .visual-element i {
-            font-size: 1.5rem;
             color: var(--premium-gold);
         }
 
-        .visual-element span {
-            font-size: 0.95rem;
-            color: #64748B;
-            font-style: italic;
-        }
-
-        /* قسم المشاعر والمسؤولية المطور */
+        /* قسم مشاعر المسؤولية المبسط */
         .reflection-section {
-            background-color: #FFFFFF;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 35px;
-            border-radius: 12px;
-            margin-top: 5px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
-            position: relative;
+            background-color: var(--silk-white);
+            padding: 30px 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.02);
         }
 
-        .reflection-quote-icon {
-            position: absolute;
-            top: -20px;
-            left: 30px;
-            background-color: var(--silk-white);
-            padding: 0 10px;
-            color: var(--premium-gold);
-            font-size: 2rem;
+        .reflection-section h2 {
+            font-size: 1.3rem;
+            color: var(--royal-navy);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .reflection-section p {
+            font-size: 1rem;
+            color: var(--text-main);
+            text-align: justify;
         }
 
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
             background-color: var(--royal-navy);
             color: var(--silk-white);
-            font-size: 0.95rem;
-            border-top: 3px solid var(--premium-gold);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(197, 160, 89, 0.2);
         }
 
         footer p {
-            opacity: 0.75;
-            letter-spacing: 0.5px;
+            opacity: 0.6;
         }
     </style>
 </head>
 <body>
 
-    <!-- بداية البرواز الفخم المحيط بالموقع -->
-    <div class="page-border">
+    <div class="wrapper">
 
         <header>
-            <div class="header-decor"><i class="fa-solid fa-caduceus"></i></div>
-            <div class="graduate-badge">دكتور طب الأسنان</div>
+            <div class="graduate-badge"><i class="fa-solid fa-user-md"></i> طب وجراحة الفم والأسنان</div>
             <h1>د. يونس محمد ياسين صوفان</h1>
-            <p>حصاد سنوات من الجهد، الشغف، والوصول.. مرحباً بكم في كواليس رحلتي الدراسية</p>
+            <p>حصاد سنوات من الجهد والشغف والوصول.. مرحباً بكم في رحلتي الدراسية</p>
         </header>
 
         <div class="container">
 
-            <!-- ١. قسم رسالة التخرج الفاخرة -->
+            <!-- ١. قسم رسالة التخرج -->
             <section class="speech-section">
                 <div class="basmala">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيم</div>
                 <div class="speech-text">
                     الحمدُ للهِ الذي علَّم بالقلم، علَّم الإنسان ما لم يعلم، وجعل بعد العسر يسرًا، والصلاة والسلام على سيدنا محمد ﷺ.
                     أما بعد…
-                    اليوم أقف وفي ذهني مقولة فهمت معناها العميق عند الوصول وهي:
+                    اليوم أقف وفي ذهني مقولة فهمت معناها عند الوصول وهي:
                     
                     <div class="quote">"من لا يعاني… لا يدرك المعاني"</div>
                     
@@ -335,32 +295,30 @@
                     <br>
                     أتمنى لرفاق دربي دوام التوفيق، وأن يكتب الله لكل واحدٍ منهم مستقبلًا يليق بتعبه، جهده، وأحلامه.
 
-                    <p style="text-align: center; margin-top: 20px; font-weight: bold; color: var(--royal-navy);">والسلام عليكم ورحمة الله وبركاته 🤍</p>
+                    <p style="text-align: center; margin-top: 20px; font-weight: 600; color: var(--royal-navy);">والسلام عليكم ورحمة الله وبركاته 🤍</p>
                 </div>
             </section>
 
-            <!-- بطاقة فخر المسافة اليومية بتنسيق مميز جداً -->
+            <!-- بطاقة المسافة اليومية الناعمة -->
             <div class="hardship-card">
                 <span class="counter">١١٤ كم</span>
-                <p style="font-size: 1.1rem; font-weight: 300; max-width: 600px; margin: 0 auto;">
-                    مسافة كنت أقطعها يومياً في كل يوم دوام جامعي.. رحلة طويلة خلفها إصرار اختصر كل التحديات للوصول إلى هذا اليوم الواعد.
-                </p>
+                <p>مسافة كنت أقطعها يومياً في كل يوم دوام جامعي.. رحلة اختصرت خلفها كل معاني الإصرار للوصول إلى الهدف.</p>
             </div>
 
-            <!-- ٢. قسم المسيرة (الجدول الزمني الراقي) -->
+            <!-- ٢. قسم المسيرة -->
             <section>
-                <h2 class="section-title">محطات في طريقي المهني والأكاديمي</h2>
+                <h2 class="section-title">محطات في طريقي الأكاديمي</h2>
                 
                 <div class="timeline">
                     
                     <!-- المحطة 1 -->
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3><i class="fa-solid fa-graduation-cap"></i> أول دوام لي في الجامعة</h3>
-                            <p>الخطوات الأولى داخل الحرم الجامعي، حيث كانت الأحلام الكبيرة مجرد أفكار مرسومة في السطور الأولى من الدفاتر والكتب.</p>
+                            <h3><i class="fa-solid fa-university"></i> أول دوام لي في الجامعة</h3>
+                            <p>خطواتي الأولى داخل الحرم الجامعي، حيث بدأت الرحلة الكبيرة وحيث كانت الأحلام مجرد أفكار في السطور الأولى.</p>
                             <div class="visual-element">
-                                <i class="fa-solid fa-building-columns"></i>
-                                <span>بداية الرحلة الأكاديمية</span>
+                                <i class="fa-solid fa-angle-left"></i>
+                                <span>بداية الرحلة</span>
                             </div>
                         </div>
                     </div>
@@ -368,11 +326,11 @@
                     <!-- المحطة 2 -->
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3><i class="fa-solid fa-user-tie"></i> المرة الأولى التي ارتديت فيها المريول الطبي</h3>
-                            <p>لحظة فخر لا تُنسى وثقت بداية تحول الحلم إلى واقع حقيقي ملموس، وشعرت فيها لأول مرة بهيبة ومسؤولية الرداء الأبيض.</p>
+                            <h3><i class="fa-solid fa-user-md"></i> المرة الأولى التي ارتديت فيها المريول الطبي</h3>
+                            <p>لحظة فخر لا تُنسى، عندما تحول الحلم إلى حقيقة ملموسة، وشعرت لأول مرة بهيبة ومسؤولية الرداء الأبيض.</p>
                             <div class="visual-element">
-                                <i class="fa-solid fa-shirt"></i>
-                                <span>هيبة الرداء الأبيض والمسؤولية الأولى</span>
+                                <i class="fa-solid fa-angle-left"></i>
+                                <span>الخطوة العملية الأولى</span>
                             </div>
                         </div>
                     </div>
@@ -380,11 +338,11 @@
                     <!-- المحطة 3 -->
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3><i class="fa-solid fa-kit-medical"></i> أول خطوة في العيادة الجامعية</h3>
-                            <p>هنا بدأ الاحتكاك العملي الفعلي.. بين رهبة المكان، وأصوات الأجهزة، والتحضير النفسي التام للانتقال من دفتي الكتب إلى الواقع والتعامل المباشر.</p>
+                            <h3><i class="fa-solid fa-stethoscope"></i> أول خطوة في العيادة الجامعية</h3>
+                            <p>هنا بدأ الاحتكاك الحقيقي.. رهبة المكان، وأصوات الأجهزة، والتحضير النفسي للانتقال من الكتب إلى الواقع العملي.</p>
                             <div class="visual-element">
-                                <i class="fa-solid fa-notes-medical"></i>
-                                <span>الانتقال إلى الممارسة السريرية والتطبيق</span>
+                                <i class="fa-solid fa-angle-left"></i>
+                                <span>العيادات السريرية</span>
                             </div>
                         </div>
                     </div>
@@ -392,11 +350,11 @@
                     <!-- المحطة 4 -->
                     <div class="timeline-item">
                         <div class="timeline-content">
-                            <h3><i class="fa-solid fa-star"></i> إنجاز أول حالة علاجية</h3>
-                            <p>كنت متوتراً جداً وخائفاً من الفشل في البداية. ولكن بعد إنجازها بنجاح واقتدار، أدركت تماماً أن الفشل ليس إلا مفتاحاً حقيقياً للنجاح، وأنه لا يمكن لإنسان أن ينجح ويتطور دون خوض هذه التجارب وبناء الثقة.</p>
+                            <h3><i class="fa-solid fa-tooth"></i> إنجاز أول حالة علاجية</h3>
+                            <p>كنت متوتراً جداً وخائفاً من الفشل في البداية. ولكن بعد إنجازها بنجاح، أدركت تماماً أن الفشل أو الخوف منه ليس إلا مفتاحاً للنجاح، وأنه لا يمكن للإنسان أن يتطور ويتعلم دون خوض هذه التجارب.</p>
                             <div class="visual-element">
-                                <i class="fa-solid fa-tooth"></i>
-                                <span>أولى الخطوات الثابتة في طب الأسنان</span>
+                                <i class="fa-solid fa-angle-left"></i>
+                                <span>بناء الثقة والانطلاق</span>
                             </div>
                         </div>
                     </div>
@@ -406,25 +364,23 @@
 
             <!-- ٣. قسم مشاعر المسؤولية -->
             <section class="reflection-section">
-                <div class="reflection-quote-icon"><i class="fa-solid fa-quote-right"></i></div>
-                <h2 class="section-title" style="margin: 10px 0 25px 0; text-align: right;">ما بعد الوصول.. نبض المسؤولية وتأنيب الضمير</h2>
-                <p style="text-align: justify; font-size: 1.15rem; line-height: 2; color: #334155;">
-                    مع فرحة التخرج والوصول المكلل بالنجاح، تولد في الأعماق شعور مختلف يفيض بالهيبة.. شعور بالمسؤولية الإنسانية والمهنية العميقة.
+                <h2>ما بعد الوصول.. ومشاعر المسؤولية</h2>
+                <p>
+                    مع فرحة التخرج والوصول إلى هذا اليوم المنتظر، تولد شعور خفي ومختلف.. شعور بالمسؤولية الكبيرة والعميقة. 
                     <br><br>
-                    لطالما تساءلت في داخلي: <strong>هل أنا قادر تماماً على التعامل مع نفس بشرية وأمانة صحية غالية؟</strong> يرافقني أحياناً تأنيب الضمير الملازم لكل طبيب مخلص؛ متسائلاً هل درست وتلقيت العلم بالشكل الكافي والمثالي لأكون كفؤاً ومستحقاً لهذا المكان النبيل؟
+                    بدأت أسأل نفسي مراراً: <strong>هل أنا قادر على التعامل مع نفس بشرية وأمانة صحية؟</strong> يرافقني أحياناً تأنيب الضمير الملازم لكل طبيب مخلص: هل درست وتعلمت بالشكل الكافي لأكون كفؤاً وبالمستوى المطلوب لهذا المكان؟ 
                     <br><br>
-                    إن هذه التساؤلات ليست ضعفاً، بل هي اليقظة والضمير الحي والمحرك الأساسي لي لأستمر في التطوير، البحث، واستكمال العلم، لأرعى هذه الأمانة بكل إخلاص وأمانة.
+                    هذه التساؤلات ليست ضعفاً، بل هي المحرك الأساسي لي لأستمر في التعلم والبحث، وأن أرعى هذه الأمانة بكل ما أوتيت من علم وإخلاص.
                 </p>
             </section>
 
         </div>
 
         <footer>
-            <p>© د. يونس محمد ياسين صوفان | جميع الحقوق محفوظة لرحلة الطموح ✨</p>
+            <p>© د. يونس محمد ياسين صوفان | جميع الحقوق محفوظة</p>
         </footer>
 
     </div>
-    <!-- نهاية البرواز الملكي -->
 
 </body>
 </html>
