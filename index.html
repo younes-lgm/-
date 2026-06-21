@@ -21,7 +21,6 @@
             --text-muted: #64748B;
         }
 
-        /* أنيميشن لظهور محتويات الصفحة بنعومة عند الفتح */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -33,11 +32,10 @@
             }
         }
 
-        /* أنيميشن نبض خفيف للأيقونة الرئيسية */
         @keyframes pulseGold {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); color: #E5C07B; }
-            100% { transform: scale(1); }
+            0% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); color: #E5C07B; opacity: 1; }
+            100% { transform: scale(1); opacity: 0.9; }
         }
 
         * {
@@ -60,21 +58,40 @@
             background-color: var(--card-white);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
             min-height: 100vh;
-            animation: fadeInUp 1s ease-out; /* تطبيق حركة الظهور الفخمة للموقع */
+            animation: fadeInUp 1s ease-out;
         }
 
         header {
             background: linear-gradient(135deg, var(--royal-navy) 0%, var(--deep-blue) 100%);
             color: var(--silk-white);
             text-align: center;
-            padding: 70px 20px;
+            padding: 65px 20px;
             border-bottom: 3px solid var(--premium-gold);
             position: relative;
         }
 
-        header .fa-user-md {
-            animation: pulseGold 3s infinite ease-in-out;
+        /* حاوية الأقواس والرسومات حول الاسم */
+        .name-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
         }
+
+        .wreath-icon {
+            font-size: 1.8rem;
+            color: var(--premium-gold);
+            opacity: 0.85;
+            transition: transform 0.5s ease;
+        }
+
+        /* حركة خفيفة للأقواس والرسومات عند فتح الصفحة */
+        .wreath-left { animation: fadeInUp 1.2s ease-out; }
+        .wreath-right { animation: fadeInUp 1.2s ease-out; }
+
+        .name-container:hover .wreath-left { transform: translateX(-5px) rotate(-5deg); }
+        .name-container:hover .wreath-right { transform: translateX(5px) rotate(5deg); }
 
         .graduate-badge {
             font-size: 0.8rem;
@@ -83,18 +100,22 @@
             padding: 5px 18px;
             border-radius: 20px;
             display: inline-block;
-            margin-bottom: 15px;
             font-weight: 400;
             letter-spacing: 0.5px;
             background-color: rgba(197, 160, 89, 0.05);
+        }
+
+        .graduate-badge i {
+            margin-left: 6px;
+            animation: pulseGold 2.5s infinite ease-in-out;
         }
 
         header h1 {
             font-size: 1.6rem; 
             font-weight: 600;
             color: var(--premium-gold);
-            margin-bottom: 12px;
             letter-spacing: 0.5px;
+            margin: 0;
         }
 
         header p {
@@ -102,7 +123,7 @@
             font-weight: 300;
             opacity: 0.85;
             max-width: 500px;
-            margin: 0 auto;
+            margin: 15px auto 0 auto;
         }
 
         .container {
@@ -143,7 +164,6 @@
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        /* حركة عند تمرير الماوس فوق المقولة */
         .quote:hover {
             transform: scale(1.01) translateX(-3px);
             background-color: #E2E8F0;
@@ -159,7 +179,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.01);
         }
 
-        /* بطاقة مسافة الـ 114 كم التفاعلية الحيوية */
         .hardship-card {
             background: linear-gradient(135deg, var(--royal-navy) 0%, #152244 100%);
             color: var(--silk-white);
@@ -172,7 +191,7 @@
         }
 
         .hardship-card:hover {
-            transform: translateY(-5px); /* ترتفع البطاقة بنعومة عند مرور الماوس */
+            transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(11, 19, 43, 0.2);
         }
 
@@ -186,7 +205,7 @@
         }
 
         .hardship-card:hover .counter {
-            transform: scale(1.05); /* يكبر الرقم قليلاً لإعطاء شعور بالحيوية */
+            transform: scale(1.05);
         }
 
         .hardship-card p {
@@ -204,7 +223,6 @@
             position: relative;
         }
 
-        /* خط مذهب صغير تحت العنوان الرئيسي لجمالية أكثر */
         .section-title::after {
             content: '';
             display: block;
@@ -227,7 +245,6 @@
             margin-bottom: 35px;
         }
 
-        /* النقاط على الخط الزمني أصبحت تتوهج عند التفاعل */
         .timeline-item::before {
             content: '';
             position: absolute;
@@ -245,7 +262,6 @@
             transform: scale(1.4);
         }
 
-        /* حركات تفاعلية داخل كروت المسيرة */
         .timeline-content {
             background: var(--card-white);
             padding: 15px 20px;
@@ -257,7 +273,7 @@
         .timeline-item:hover .timeline-content {
             background-color: #FAF9F6;
             border-right: 3px solid var(--premium-gold);
-            padding-right: 25px; /* تأثير زحزحة خفيف وناعم للمحتوى */
+            padding-right: 25px;
         }
 
         .timeline-content h3 {
@@ -278,7 +294,7 @@
 
         .timeline-item:hover .timeline-content h3 i {
             color: var(--premium-gold);
-            transform: rotate(10deg); /* تدوير الأيقونة قليلاً عند المرور عليها */
+            transform: rotate(10deg);
         }
 
         .timeline-content p {
@@ -306,7 +322,6 @@
             color: var(--premium-gold);
         }
 
-        /* قسم مشاعر المسؤولية مع حركة تفاعل ناعمة */
         .reflection-section {
             background-color: #F8FAFC;
             padding: 35px 25px;
@@ -354,7 +369,14 @@
 
         <header>
             <div class="graduate-badge"><i class="fa-solid fa-user-md"></i> طب وجراحة الفم والأسنان</div>
-            <h1>د. يونس محمد ياسين صوفان</h1>
+            
+            <!-- قسم الاسم الجديد المزين بالرسومات التفاعلية الناعمة -->
+            <div class="name-container">
+                <i class="fa-solid fa-feather wreath-icon wreath-right" style="transform: scaleX(-1);"></i>
+                <h1>د. يونس محمد ياسين صوفان</h1>
+                <i class="fa-solid fa-feather wreath-icon wreath-left"></i>
+            </div>
+            
             <p>حصاد سنوات من الجهد والشغف والوصول.. مرحباً بكم في رحلتي الدراسية</p>
         </header>
 
@@ -387,7 +409,7 @@
                 </div>
             </section>
 
-            <!-- بطاقة المسافة اليومية التفاعلية حركياً -->
+            <!-- بطاقة المسافة اليومية التفاعلية -->
             <div class="hardship-card">
                 <span class="counter">١١٤ كم</span>
                 <p>مسافة كنت أقطعها يومياً في كل يوم دوام جامعي.. رحلة اختصرت خلفها كل معاني الإصرار للوصول إلى الهدف.</p>
@@ -427,7 +449,7 @@
                     <div class="timeline-item">
                         <div class="timeline-content">
                             <h3><i class="fa-solid fa-stethoscope"></i> أول خطوة في العيادة الجامعية</h3>
-                            <p>هنا بدأ الاحتكاك الحقيقي.. رهبة المكان، وأصوات الأجهزة، والتحضير النفسي للانتقال من الكتب إلى الواقع العملي.</p>
+                            <p>هنا بدأ الاحتكاك الحقيقي.. رهبة المكان, وأصوات الأجهزة، والتحضير النفسي للانتقال من الكتب إلى الواقع العملي.</p>
                             <div class="visual-element">
                                 <i class="fa-solid fa-arrow-left-long"></i>
                                 <span>العيادات السريرية</span>
